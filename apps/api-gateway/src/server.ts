@@ -1,3 +1,8 @@
-async function main() {}
+import api from "@/api"
+import { serve } from "@hono/node-server"
+import { config } from "@/conf"
 
-main()
+serve({
+  fetch: api.fetch,
+  port: config.PORT,
+})

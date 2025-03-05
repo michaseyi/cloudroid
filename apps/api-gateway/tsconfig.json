@@ -7,8 +7,8 @@
 
     /* Module system: */
     "esModuleInterop": true,
-    "module": "NodeNext",
-    "moduleResolution": "NodeNext",
+    "module": "CommonJS", // Changed from NodeNext
+    "moduleResolution": "node", // Changed from NodeNext
 
     /* Import options: */
     "allowJs": true, //Allow import .js
@@ -28,5 +28,5 @@
       "@/*": ["*"]
     }
   },
-  "include": ["src/**/*"]
+  "include": ["src/**/*", "global-context.d.ts"]
 }
