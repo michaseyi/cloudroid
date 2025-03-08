@@ -1,3 +1,2 @@
-import { UserValidation } from "./user.validation"
-
-export { UserValidation }
+export { UserValidation } from "@/validations/user.validation"
+export { InstanceValidation } from "@/validations/instance.validation"

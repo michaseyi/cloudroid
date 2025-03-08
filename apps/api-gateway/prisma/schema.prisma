@@ -18,19 +18,23 @@ model User {
   name  String
   email String @unique
   password String
-}
-
-
-model AndroidInstance {
-  id String @id @default(uuid())
-  status AndroidInstanceStatus
+  instances AndroidInstance[]
 }
 
 enum AndroidInstanceStatus {
+  UNALLOCATED
   INITIALIZING
   RUNNING
   STOPPED
   DELETED
+}
+
+model AndroidInstance {
+  id String @id @default(uuid())
+  name String
+  userId String
+  user User @relation(fields: [userId], references: [id])
+  status AndroidInstanceStatus @default(UNALLOCATED)
 }
 
 

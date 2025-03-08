@@ -23,7 +23,7 @@ class AuthMiddleware {
       })
     }
     c.user = payload.data
-    next()
+    await next()
   }
 }
 
